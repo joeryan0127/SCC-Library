@@ -47,54 +47,51 @@ include "Header/Registerhead.php";
 
 
 
-                  <form class="row g-3">
+                  <form class="row g-3" action="Loginfunction/Registerf.php" method="post" enctype="multipart/form-data">
                 <div class="col-md-12">
                   <label for="inputName5" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="inputName5">
+                  <input type="text" class="form-control" name="name" id="inputName5">
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail5" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail5">
+                  <input type="text" class="form-control" name="email" id="inputEmail5">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail5" class="form-label">User</label>
+                  <input type="text" class="form-control" name="user" id="inputEmail5">
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword5" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword5">
+                  <input type="password" class="form-control" name="pass" id="inputPassword5">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword5" class="form-label">Retype Password</label>
+                  <input type="password" class="form-control" name="rpass" id="inputPassword5">
                 </div>
                 <div class="col-12">
                   <label for="inputAddress5" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St">
+                  <input type="text" class="form-control" name="address" id="inputAddres5s" >
                 </div>
-                <div class="col-12">
-                  <label for="inputAddress2" class="form-label">Address 2</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                  <label for="inputCity" class="form-label">City</label>
-                  <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-4">
-                  <label for="inputState" class="form-label">State</label>
-                  <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div class="col-md-2">
-                  <label for="inputZip" class="form-label">Zip</label>
-                  <input type="text" class="form-control" id="inputZip">
-                </div>
-                <div class="col-12">
+            
+            
+                <!-- <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
                       Check me out
                     </label>
                   </div>
-                </div>
+                </div> -->
+
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Create</button>
+                  <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
                 </div>
+
+                <div class="text-center">
+                      <p class="small mb-0">Already have an account? <a href="login.php">Log in</a></p>
+                    </div>
+
               </form><!-- End Multi Columns Form -->
 
 

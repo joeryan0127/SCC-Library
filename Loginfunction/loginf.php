@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
 $user =$_POST['username'];
 $pass=$_POST['password'];
 
-    $select=$conn->prepare("SELECT * FROM tbl_account WHERE a_user = :user AND a_status = Active");
+    $select=$conn->prepare("SELECT * FROM tbl_account WHERE a_user = :user AND a_status = 'Active'");
     $select->bindParam(':user', $user);
     $select->execute();
     $username = $select->fetch(PDO::FETCH_ASSOC);

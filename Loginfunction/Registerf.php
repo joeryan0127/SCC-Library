@@ -6,9 +6,11 @@ include "../DB/connection.php";
 if(isset($_POST['submit'])){
 
     $name = $_POST['name'];
-    $user =$_POST['username'];
-    $pass = $_POST['password'];
-    $rpass = $_POST['Rpassword'];
+    $email = $_POST['email'];
+    $user =$_POST['user'];
+    $pass = $_POST['pass'];
+    $rpass = $_POST['rpass'];
+    $address = $_POST['address'];
 
     $select=$conn->prepare("SELECT a_user FROM tbl_account WHERE a_user = :user");
     $select->bindParam(':user', $user);
@@ -29,10 +31,12 @@ if(isset($_POST['submit'])){
 
         $hashedpwd = password_hash($pass, PASSWORD_DEFAULT);
 
-        $statement=$conn->prepare("INSERT INTO tbl_account (a_name, a_user, a_pass, a_status)VALUE(:name, :user, :pass, :status)");
+        $statement=$conn->prepare("INSERT INTO tbl_account (a_name, a_email, a_user, a_pass, a_address, a_status)VALUE(:name, :email, :user, :pass, :address, :status)");
         $statement->bindValue(':name',$name);
+        $statement->bindValue(':email',$email);
         $statement->bindValue(':user',$user);
         $statement->bindValue(':pass',$hashedpwd);
+        $statement->bindValue(':address',$address);
         $statement->bindValue(':status','Active');
         $statement->execute();
 
