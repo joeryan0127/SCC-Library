@@ -24,14 +24,69 @@ $book=$statement->fetchAll();
 <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Data Tables</h1>
-  <nav>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-      <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active">Data</li>
-    </ol>
-  </nav>
+  <h1>Issue Tables</h1>
+ 
+  <?php
+     if(isset($_GET["error"])){
+       if($_GET["error"]== "AlreadyReturned"){
+
+          //  echo "<script> alert('Book Already Returned');</script>";
+
+           echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+           <i class="bi bi-check-circle me-1"></i>
+           Book Already Returned
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>';
+
+           }
+
+       if($_GET["error"]== "AddedSuccess"){
+          // echo "<script> alert('Book is issued');</script>";
+
+         echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                Added Successfully
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+
+            }
+            if($_GET["error"]== "UpdateSuccess"){
+
+              echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="bi bi-check-circle me-1"></i>
+              Updated Successfully
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+
+                }
+                if($_GET["error"]== "Returned"){
+
+                  echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <i class="bi bi-check-circle me-1"></i>
+                  Book Returned
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+    
+                    }
+                    if($_GET["error"]== "Nostock"){
+                      echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <i class="bi bi-check-circle me-1"></i>
+                      Book is out of stock
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                        }
+                        echo '<script>
+                      
+                        var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+                        history.replaceState({}, document.title, newUrl);
+                        
+                        </script>';
+
+         }
+      ?>
+
+
+
 </div><!-- End Page Title -->
 
 <section class="section">
@@ -64,27 +119,7 @@ $book=$statement->fetchAll();
           <!-- Table with stripped rows -->
 
        
-          <?php
-     if(isset($_GET["error"])){
-       if($_GET["error"]== "AlreadyReturned"){
-           echo "<script> alert('Book Already Returned');</script>";
-           }
-
-       if($_GET["error"]== "AddedSuccess"){
-          echo "<script> alert('Book is issued');</script>";
-            }
-            if($_GET["error"]== "UpdateSuccess"){
-              echo "<script> alert('Updated Successfuly');</script>";
-                }
-                if($_GET["error"]== "Returned"){
-                  echo "<script> alert('Book Returned');</script>";
-                    }
-                    if($_GET["error"]== "Nostock"){
-                      echo "<script> alert('Book is out of stock');</script>";
-                        }
-         }
-      ?>
-
+   
 
 
 
@@ -120,7 +155,7 @@ $book=$statement->fetchAll();
              
                 <td>
 
-           <a href="#edit_<?php echo $issue["i_id"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><span class="fa fa-edit"></a>
+           <a href="#edit_<?php echo $issue["i_id"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
            <?php include("Modal/issueModal/updateissue.php"); ?> 
 
           <a href="#del_<?php echo $issue["i_id"]; ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal"><i class="bi bi-arrow-return-left"></i></a>

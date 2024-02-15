@@ -22,18 +22,7 @@ include "Header/Registerhead.php";
               </div>
 
 
-      <?php
-     if(isset($_GET["error"])){
-       if($_GET["error"]== "Usernametaken"){
-           echo "<script> alert('Username is Already Taken');</script>";
-           }
-
-       if($_GET["error"]== "Mismatch"){
-          echo "<script> alert('Password Not Match');</script>";
-            }
-           
-         }
-      ?>
+     
 
 
               <div class="card ">
@@ -45,32 +34,56 @@ include "Header/Registerhead.php";
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
+                  <?php
+                  if(isset($_GET["error"])){
+                    if($_GET["error"]== "Usernametaken"){
+                        //  echo "<script> alert('Username is Already Taken');</script>";
 
+                        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-octagon me-1"></i>
+                        Username is Already Taken
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>';
+
+                        }
+
+                    if($_GET["error"]== "Mismatch"){
+                        // echo "<script> alert('Password Not Match');</script>";
+                        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-octagon me-1"></i>
+                       Password Not Match
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>';
+
+                          }
+                              
+                            }
+                          ?>
 
                   <form class="row g-3" action="Loginfunction/Registerf.php" method="post" enctype="multipart/form-data">
                 <div class="col-md-12">
                   <label for="inputName5" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" name="name" id="inputName5">
+                  <input type="text" class="form-control" name="name" id="inputName5" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail5" class="form-label">Email</label>
-                  <input type="text" class="form-control" name="email" id="inputEmail5">
+                  <input type="text" class="form-control" name="email" id="inputEmail5" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail5" class="form-label">User</label>
-                  <input type="text" class="form-control" name="user" id="inputEmail5">
+                  <input type="text" class="form-control" name="user" id="inputEmail5"  required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword5" class="form-label">Password</label>
-                  <input type="password" class="form-control" name="pass" id="inputPassword5">
+                  <input type="password" class="form-control" name="pass" id="inputPassword5" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword5" class="form-label">Retype Password</label>
-                  <input type="password" class="form-control" name="rpass" id="inputPassword5">
+                  <input type="password" class="form-control" name="rpass" id="inputPassword5" required>
                 </div>
                 <div class="col-12">
                   <label for="inputAddress5" class="form-label">Address</label>
-                  <input type="text" class="form-control" name="address" id="inputAddres5s" >
+                  <input type="text" class="form-control" name="address" id="inputAddres5s" required>
                 </div>
             
             
@@ -149,3 +162,9 @@ include "Header/Registerhead.php";
 
                 </div>
               </div>
+
+              <?php
+            
+            include "footer/Registerfoot.php";
+
+            ?>

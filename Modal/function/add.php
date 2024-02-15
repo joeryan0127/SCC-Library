@@ -23,7 +23,7 @@ $statement->bindValue(':Description',$Description);
 $statement->bindValue(':publish',$publish);
 $statement->execute();
 
-header("location:../../Books.php?error=AddedSuccess");
+header("location:../../Books.php?error=AddedbookSuccess");
 
 }
 

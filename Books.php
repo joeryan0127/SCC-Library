@@ -7,14 +7,63 @@ include "Db/connection.php";
 <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Data Tables</h1>
-  <nav>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-      <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active">Data</li>
-    </ol>
-  </nav>
+  <h1>Books Tables</h1>
+
+  <?php
+                if(isset($_GET["error"])){
+                  if($_GET["error"]== "AddedbookSuccess"){
+                    echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle me-1"></i>
+                   Added Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>';
+                      }
+
+
+                  if($_GET["error"]== "UpdatedSuccessfully"){
+                      // echo "<script> alert('Updated Successfully');</script>";
+                      echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <i class="bi bi-check-circle me-1"></i>
+                     Updated Successfully
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                        }
+
+
+                            if($_GET["error"]== "Deleted"){
+                              // echo "<script> alert('Book Deleted');</script>";
+
+                              echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+                              <i class="bi bi-check-circle me-1"></i>
+                             Deleted Successfully
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>';
+
+                               }
+
+                             if($_GET["error"]== "Nofile"){
+                                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <i class="bi bi-exclamation-octagon me-1"></i>
+                                          No File attached
+                                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>';
+                                    }
+
+                                    if($_GET["error"]== "Uploaded"){
+                                      // echo "<script> alert('File is uploaded');</script>";
+
+                                      echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                      <i class="bi bi-check-circle me-1"></i>
+                                    File Uploaded Successfully
+                                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>';
+                                        }
+
+                    }
+                  ?>
+
+
+
 </div><!-- End Page Title -->
 
 <section class="section">
@@ -23,6 +72,13 @@ include "Db/connection.php";
 
       <div class="card">
         <div class="card-body">
+
+
+
+
+
+
+
           <!-- <h5 class="card-title">Datatables</h5>
           <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
         -->
@@ -42,29 +98,7 @@ include "Db/connection.php";
            ?>
 
 
-            <?php
-                if(isset($_GET["error"])){
-                  if($_GET["error"]== "AddedSuccess"){
-                      echo "<script> alert('Book Added Successfully');</script>";
-                      }
-
-                  if($_GET["error"]== "UpdatedSuccessfully"){
-                      echo "<script> alert('Updated Successfully');</script>";
-                        }
-                        if($_GET["error"]== "UpdateSuccess"){
-                          echo "<script> alert('Updated Successfuly');</script>";
-                            }
-                            if($_GET["error"]== "Deleted"){
-                              echo "<script> alert('Book Deleted');</script>";
-                                }
-                                if($_GET["error"]== "Nofile"){
-                                  echo "<script> alert('No file Attached');</script>";
-                                    }
-                                    if($_GET["error"]== "Uploaded"){
-                                      echo "<script> alert('File is uploaded');</script>";
-                                        }
-                    }
-                  ?>
+           
 
 
 
@@ -101,7 +135,7 @@ include "Db/connection.php";
              
                 <td>
 
-           <a href="#edit_<?php echo $books["b_isbn"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><span class="fa fa-edit"></a>
+           <a href="#edit_<?php echo $books["b_isbn"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
            <?php include("Modal/UpdateBookM.php"); ?> 
 
           <a href="#del_<?php echo $books["b_isbn"]; ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal"><i class="bi bi-trash3"></i></a>
@@ -126,6 +160,8 @@ include "Db/connection.php";
 </section>
 
 </main><!-- End #main -->
+
+
 
 
 <?php

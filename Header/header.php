@@ -1,3 +1,36 @@
+
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])){
+
+  header("location:login.php?error=loginfirst");
+  exit;
+}
+
+
+if(isset($_GET["error"])){
+
+
+    echo '<script>
+                      
+    var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    history.replaceState({}, document.title, newUrl);
+    
+    </script>';
+
+ 
+}
+
+
+  ?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +41,15 @@
   <title>Dashboard - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+
+
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -26,7 +68,7 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  
+
 
    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
@@ -259,7 +301,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="Logout/logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -295,9 +337,9 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <!-- <a href="components-alerts.html">
+            <a href="components-alerts.html">
               <i class="bi bi-circle"></i><span>Alerts</span>
-            </a> -->
+            </a>
 
             <a href="books.php">
               <i class="bi bi-circle"></i><span> Manage Books</span>

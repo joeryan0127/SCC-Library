@@ -28,9 +28,12 @@
                     <input type = "text" name="stud" list="stud" class="form-control"  placeholder ="Select Student"  required>
                     <datalist id="stud">
                     <?php foreach ($stud as $row): ?>
-                    <option value=<?= $row['s_id'] ?> > <?= $row['s_id'] ?> <?= $row['firstname'] ?> <?= $row['lastname'] ?></option>
+                    <option value=<?= $row['s_id'] ?> > <?= $row['firstname'] ?> <?= $row['lastname'] ?></option>
                     <?php endforeach ?>
                     </datalist>  
+
+              
+
 
                 </div>
 
@@ -43,15 +46,16 @@
                     $statement->execute();
                     $book=$statement->fetchAll()?>
 
-                  <input type = "text" name="book" list="book" class="form-control"  placeholder ="Select book"  required>
-                  <datalist id="book">
+               
+                <select class="selectpicker" data-live-search="true">
                     <?php foreach ($book as $row): ?>
-                    <option value=<?= $row['b_isbn'] ?> > <?= $row['b_isbn'] ?> <?= $row['b_name'] ?> </option>
+                   
+                      <option selected disabled >Choose book</option>
+                    <option value=<?= $row['b_isbn'] ?> ><?= $row['b_name'] ?> </option>
                     <?php endforeach ?>
-                    </datalist>  
-                </div>
-
-              
+            
+                      </select>
+                      </div>
               
                 <div class="modal-footer">
                  
@@ -63,7 +67,7 @@
             </div>
           </div>
        
-
+ 
 
 
                   </div>

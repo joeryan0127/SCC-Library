@@ -35,11 +35,31 @@ include "Header/Registerhead.php";
                                 <?php
                   if(isset($_GET["error"])){
                     if($_GET["error"]== "Wrongcredential"){
-                        echo "<script> alert('Wrong Credentials');</script>";
-                        }
-
+                        // echo "<script> alert('Wrong Credentials');</script>";
+                       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-octagon me-1"></i>
+                        Wrong Credentials
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>';
                     
-                        
+                 
+                        }
+                      
+                    if($_GET["error"]== "loginfirst"){
+                      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <i class="bi bi-exclamation-octagon me-1"></i>
+                      Log in First
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                  
+                          }
+                    
+                          echo '<script>
+                      
+                          var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+                          history.replaceState({}, document.title, newUrl);
+                          
+                          </script>';
                       }
                     ?>
 

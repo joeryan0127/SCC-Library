@@ -37,7 +37,7 @@ if($filename[1] == 'csv'){
       $item6 = mysqli_real_escape_string($connect, utf8_encode($data[5]));
   
   
-      $special = htmlspecialchars($item1, ENT_QUOTES, 'UTF-8');
+      // $special = htmlspecialchars($item1, ENT_QUOTES, 'UTF-8');
 
 //       $query = "INSERT into tbl_items (name, quantity, unit, price, discount) 
 //       values('$item1','$item2','$item3','$item4','$item5')";
@@ -51,8 +51,8 @@ if($filename[1] == 'csv'){
 
 
 $query = "INSERT INTO tbl_books (b_image,b_name,b_description, b_publish, b_quantity, b_author) 
-VALUES ('$special','$item2','$item3','$item4','$item5','$item6') 
-ON DUPLICATE KEY  UPDATE b_image='$special' b_name='$item2',b_description='$item3', b_publish='$item4', b_quantity='$item5',b_author='$item6'";
+VALUES ('$item1','$item2','$item3','$item4','$item5','$item6') ";
+
 
       mysqli_query($connect, $query);
 

@@ -21,9 +21,10 @@ $pass=$_POST['password'];
 
         session_start();
 
-        $_SESSION['name']= $username["a_name"];
-        $_SESSION['user']= $username["a_user"];
-        $_SESSION['pass']= $username["a_pass"];
+        $_SESSION['id']= $username["a_id"];
+        // $_SESSION['name']= $username["a_name"];
+        // $_SESSION['user']= $username["a_user"];
+        // $_SESSION['pass']= $username["a_pass"];
 
         header("location:../Dashboard.php?error=loginsuccessfully");
 
@@ -33,7 +34,7 @@ $pass=$_POST['password'];
 
     }
 
-}
+} 
 
 
 ?>

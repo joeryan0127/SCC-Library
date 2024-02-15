@@ -15,7 +15,15 @@ $statement =$conn->prepare("SELECT count(*) from tbl_issuebook WHERE i_status ='
 $statement->execute();
 $issue=$statement->fetchColumn();
 
+
+
+
+
+
 ?>
+
+
+
 
 
 <main id="main" class="main">
