@@ -48,9 +48,11 @@
 
                
                 <select class="selectpicker" data-live-search="true">
+
+                <option selected disabled >Choose book</option>
                     <?php foreach ($book as $row): ?>
                    
-                      <option selected disabled >Choose book</option>
+                    
                     <option value=<?= $row['b_isbn'] ?> ><?= $row['b_name'] ?> </option>
                     <?php endforeach ?>
             
