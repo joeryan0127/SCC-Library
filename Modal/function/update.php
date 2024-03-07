@@ -4,9 +4,19 @@ include "../../DB/connection.php";
 if(isset($_POST['submit'])){
 $ID=$_POST['id'];   
 
-$Book_name=$_POST['name'];
-$Description=$_POST['Description'];
-$publish=$_POST['Publish'];
+$daterecieved=$_POST['daterecieved'];
+$class=$_POST['class'];
+$author=$_POST['author'];
+$tittle=$_POST['tittle'];
+$isbn=$_POST['isbn'];
+$edition=$_POST['edition'];
+$volume=$_POST['volume'];
+$pages=$_POST['page'];
+$sourceoffund=$_POST['fund'];
+$publisher=$_POST['publisher'];
+$costprice=$_POST['price'];
+$year=$_POST['year'];
+$quantity=$_POST['quantity'];
 
 $photo=$_FILES['Image']['name'];
 
@@ -18,7 +28,7 @@ if(!empty($photo)){
 
 }
 else{
-    $statement=$conn->prepare("SELECT * FROM tbl_books Where b_isbn = :id");
+    $statement=$conn->prepare("SELECT * FROM tbl_books Where b_id  = :id");
 $statement->bindValue(':id', $ID);
 $statement->execute();
 while($books=$statement->fetch()){
@@ -28,12 +38,22 @@ while($books=$statement->fetch()){
 }
 }
 
-$statement=$conn->prepare("UPDATE tbl_books SET b_image=:image, b_name=:name,b_description=:Description,b_publish=:publish WHERE b_isbn = :id");
+$statement=$conn->prepare("UPDATE tbl_books SET b_daterecieved = :daterecieved, b_class= :class, b_author= :author, b_titleofbook = :tittle, b_image =:image, b_isbn = :isbn, b_edition = :edition, b_volumes = :volume, b_page = :page, b_sourceoffund = :sourceoffund, b_costprice = :costprice, b_publisher = :publisher, b_year= :year, b_quantity = :quantity WHERE b_id  = :id");
 
+$statement->bindValue(':daterecieved',$daterecieved);
+$statement->bindValue(':class',$class); 
+$statement->bindValue(':author',$author);
+$statement->bindValue(':tittle',$tittle);
 $statement->bindValue(':image',$filename);
-$statement->bindValue(':name',$Book_name);
-$statement->bindValue(':Description',$Description);
-$statement->bindValue(':publish',$publish);
+$statement->bindValue(':isbn',$isbn);
+$statement->bindValue(':edition',$edition);
+$statement->bindValue(':volume',$volume);
+$statement->bindValue(':page',$pages);
+$statement->bindValue(':sourceoffund',$sourceoffund);
+$statement->bindValue(':costprice',$costprice);
+$statement->bindValue(':publisher',$publisher);
+$statement->bindValue(':year',$year);
+$statement->bindValue(':quantity',$quantity);
 $statement->bindValue(':id',$ID);
 $statement->execute();
 

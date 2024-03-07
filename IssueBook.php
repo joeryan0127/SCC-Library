@@ -97,7 +97,7 @@ $book=$statement->fetchAll();
 
       <div class="issueside">
 
-<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#issueModal">
+<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#issue">
   <i class="zmdi zmdi-plus"></i><i class="bi bi-journal-plus"></i>Issue</button>
 
   <!-- <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#import">
@@ -135,7 +135,7 @@ $book=$statement->fetchAll();
             </thead>  
 
             <?php
-                     $statement=$conn->prepare("SELECT * FROM ((tbl_issuebook INNER JOIN tbl_students ON tbl_issuebook.s_id = tbl_students.s_id)  INNER JOIN  tbl_books ON tbl_issuebook.book_id = tbl_books.b_isbn)");
+                     $statement=$conn->prepare("SELECT * FROM ((tbl_issuebook INNER JOIN tbl_students ON tbl_issuebook.s_id = tbl_students.s_id)  INNER JOIN  tbl_books ON tbl_issuebook.book_id = tbl_books.b_id)");
                      $statement->execute();
                      while($issue=$statement->fetch()){
                ?>
@@ -144,7 +144,7 @@ $book=$statement->fetchAll();
               <tr>
                 <td><?php echo $issue['i_id'] ?></td>
                 <td><?php echo $issue['firstname'] ?> <?php echo $issue['lastname'] ?></td>
-                <td><?php echo $issue['b_name'] ?></td>
+                <td><?php echo $issue['b_titleofbook'] ?></td>
                 <td><?php echo $issue['i_date'] ?></td>
                 <td><?php echo $issue['i_status'] ?></td>
             

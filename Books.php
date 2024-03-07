@@ -98,19 +98,15 @@ include "Db/connection.php";
            ?>
 
 
-           
-
-
-
-
           <!-- Table with stripped rows -->
           <table class="table-borderless datatable">
             <thead>
               <tr>
-                <th scope="col">ISBN</th>
+                <th scope="col">Book id</th>
                 <th scope="col">Book Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Publish</th>
+<!--                
+                <th scope="col">Edition</th> -->
+                <th scope="col">Publisher</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Author</th>
                 <th scope="col">Action</th>
@@ -126,20 +122,25 @@ include "Db/connection.php";
 
          
               <tr>
-                <td><?php echo $books['b_isbn'] ?></td>
-                <td><?php echo $books['b_name'] ?></td>
-                <td><?php echo $books['b_description'] ?></td>
-                <td><?php echo $books['b_publish'] ?></td>
+                <td><?php echo $books['b_id'] ?></td>
+                <td><?php echo $books['b_titleofbook'] ?></td>
+                
+                <!-- <td><?php echo $books['b_edition'] ?></td> -->
+                <td><?php echo $books['b_publisher'] ?></td>
                 <td><?php echo $books['b_quantity'] ?></td>
                 <td><?php echo $books['b_author'] ?></td>
              
                 <td>
-
-           <a href="#edit_<?php echo $books["b_isbn"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
+            
+                <div style="position:absolute">
+            
+        <a href="#edit_<?php echo $books["b_id"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
            <?php include("Modal/UpdateBookM.php"); ?> 
 
-          <a href="#del_<?php echo $books["b_isbn"]; ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal"><i class="bi bi-trash3"></i></a>
+          <a href="#del_<?php echo $books["b_id"]; ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal"><i class="bi bi-trash3"></i></a>
           <?php include("Modal/DeleteBookM.php"); ?>
+         
+              </div>
 
                 </td>
 

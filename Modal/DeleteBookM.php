@@ -1,4 +1,4 @@
-<div class="modal fade" id="del_<?php echo $books["b_isbn"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="del_<?php echo $books["b_id"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,7 +8,7 @@
       <!-- <div class="modal-body"> -->
 <form action="modal/function/Del.php" method="POST">
 
-<input type="hidden" name="id" value= "<?php echo $books["b_isbn"]; ?>">
+<input type="hidden" name="id" value= "<?php echo $books["b_id"]; ?>">
 
 
 

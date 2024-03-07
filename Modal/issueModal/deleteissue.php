@@ -9,7 +9,7 @@
 <form action="Modal/issueModal/issuefunctions/deleteissueF.php" method="POST">
 
 <input type="hidden" name="id" value= "<?php echo $issue["i_id"]; ?>">
-<input type="hidden" name="book" value= "<?php echo $issue["b_isbn"]; ?>">
+<input type="hidden" name="book" value= "<?php echo $issue["b_id"]; ?>">
 <input type="hidden" name="status" value= "<?php echo $issue["i_status"]; ?>">
 
 

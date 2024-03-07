@@ -38,7 +38,7 @@ include "DB/connection.php";
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="portfolio-details.html"><?php echo $books['b_name'] ?></a></h4>
+                <h4 style ="word-wrap: break-word;"><a href="portfolio-details.html"><?php echo $books['b_titleofbook'] ?></a></h4>
                 <p>App</p>
               </div>
             </div>

@@ -1,10 +1,10 @@
 
 
-<div class="modal fade" id="issueModal" tabindex="-1">
+<div class="modal fade" id="issue" tabindex="-1">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Large Modal</h5>
+                      <h5 class="modal-title">Issue Book</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
              
@@ -16,6 +16,7 @@
 
               <!-- No Labels Form -->
               <form class="row g-3" action="Modal/issueModal/issuefunctions/addissue.php" method="post" enctype="multipart/form-data">
+               
                 <div class="col-md-6">
                   <!-- <input type="text" class="form-control" name="s_id" placeholder="Student ID"> -->
 
@@ -25,14 +26,18 @@
                     $statement->execute();
                     $stud=$statement->fetchAll()?>
 
-                    <input type = "text" name="stud" list="stud" class="form-control"  placeholder ="Select Student"  required>
-                    <datalist id="stud">
-                    <?php foreach ($stud as $row): ?>
-                    <option value=<?= $row['s_id'] ?> > <?= $row['firstname'] ?> <?= $row['lastname'] ?></option>
-                    <?php endforeach ?>
-                    </datalist>  
+               
 
-              
+                    <select class="selectpicker" name = "stud" data-live-search="true">
+
+                    <option selected disabled >Choose student</option>
+                        <?php foreach ($stud as $row): ?>
+                      
+                        
+                        <option value=<?= $row['s_id'] ?> ><?= $row['firstname'] ?> <?= $row['lastname'] ?> </option>
+                        <?php endforeach ?>
+
+                      </select>
 
 
                 </div>
@@ -47,17 +52,19 @@
                     $book=$statement->fetchAll()?>
 
                
-                <select class="selectpicker" data-live-search="true">
+                <select class="selectpicker" name = "book" data-live-search="true">
 
                 <option selected disabled >Choose book</option>
                     <?php foreach ($book as $row): ?>
                    
                     
-                    <option value=<?= $row['b_isbn'] ?> ><?= $row['b_name'] ?> </option>
+                    <option value=<?= $row['b_id'] ?> ><?= $row['b_titleofbook'] ?> </option>
                     <?php endforeach ?>
             
                       </select>
                       </div>
+
+             
               
                 <div class="modal-footer">
                  

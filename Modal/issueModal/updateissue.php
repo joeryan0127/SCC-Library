@@ -26,32 +26,38 @@
 
                   <input type = "hidden" name="book_id" class="form-control" Value="<?php echo $issue["book_id"]; ?>"  required>
 
-                    <input type = "text" name="stud" list="stud" class="form-control" Value="<?php echo $issue["s_id"]; ?>"  required>
-                    <datalist id="stud">
-                    <?php foreach ($stud as $row): ?>
-                    <option value=<?= $row['s_id'] ?> > <?= $row['s_id'] ?> <?= $row['firstname'] ?> <?= $row['lastname'] ?></option>
-                    <?php endforeach ?>
-                    </datalist>  
+                   
+                    <select class="selectpicker" name = "stud" data-live-search="true">
 
+                    <option value= "<?php echo $issue["s_id"]; ?>" ><?php echo $issue["firstname"]; ?> <?php echo $issue["lastname"]; ?></option>
+
+                        <?php foreach ($stud as $row): ?>
+                      
+                        
+                        <option value=<?= $row['s_id'] ?> ><?= $row['firstname'] ?> <?= $row['lastname'] ?></option>
+                        <?php endforeach ?>
+
+                          </select>
+
+
+
+                    
                 </div>
 
 
                 <div class="col-md-6">
 
-                    <?php
+                <select class="selectpicker" name = "book" data-live-search="true">
 
-                  ?>
-
-                  <input type = "text" name="book" list="book" class="form-control"  Value="<?php echo $issue["book_id"]; ?>"  required>
-                  <datalist id="book">
+                <option value= "<?php echo $issue["b_id"]; ?>" ><?php echo $issue["b_titleofbook"]; ?></option>
                     <?php foreach ($book as $row): ?>
-                    <option value=<?= $row['b_isbn'] ?> > <?= $row['b_isbn'] ?> <?= $row['b_name'] ?> </option>
+                    <option value=<?= $row['b_id'] ?> ><?= $row['b_titleofbook'] ?> </option>
                     <?php endforeach ?>
-                    </datalist>  
+
+                      </select>
+
                 </div>
 
-              
-              
                 <div class="modal-footer">
                  
                   <button type="submit" class="btn btn-primary" name ="submit">Save </button>

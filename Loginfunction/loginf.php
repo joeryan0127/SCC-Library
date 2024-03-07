@@ -22,9 +22,12 @@ $pass=$_POST['password'];
         session_start();
 
         $_SESSION['id']= $username["a_id"];
-        // $_SESSION['name']= $username["a_name"];
-        // $_SESSION['user']= $username["a_user"];
-        // $_SESSION['pass']= $username["a_pass"];
+        $_SESSION['name']= $username["a_name"];
+        $_SESSION['email']= $username["a_email"];
+        $_SESSION['user']= $username["a_user"];
+        $_SESSION['pass']= $username["a_pass"];
+        $_SESSION['address']= $username["a_address"];
+        $_SESSION['phone']= $username["a_phone"];
 
         header("location:../Dashboard.php?error=loginsuccessfully");
 

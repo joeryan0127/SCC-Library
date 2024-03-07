@@ -35,6 +35,16 @@ if($filename[1] == 'csv'){
       $item4 = mysqli_real_escape_string($connect, utf8_encode($data[3]));
       $item5 = mysqli_real_escape_string($connect, utf8_encode($data[4]));
       $item6 = mysqli_real_escape_string($connect, utf8_encode($data[5]));
+      $item7 = mysqli_real_escape_string($connect, utf8_encode($data[6]));
+      $item8 = mysqli_real_escape_string($connect, utf8_encode($data[7]));
+      $item9 = mysqli_real_escape_string($connect, utf8_encode($data[8]));
+      $item10 = mysqli_real_escape_string($connect, utf8_encode($data[9]));
+      $item11 = mysqli_real_escape_string($connect, utf8_encode($data[10]));
+      $item12 = mysqli_real_escape_string($connect, utf8_encode($data[11]));
+      $item13 = mysqli_real_escape_string($connect, utf8_encode($data[12]));
+      $item14 = mysqli_real_escape_string($connect, utf8_encode("sample.png"));
+      $item15 = mysqli_real_escape_string($connect, utf8_encode(5));
+
   
   
       // $special = htmlspecialchars($item1, ENT_QUOTES, 'UTF-8');
@@ -50,8 +60,8 @@ if($filename[1] == 'csv'){
 
 
 
-$query = "INSERT INTO tbl_books (b_image,b_name,b_description, b_publish, b_quantity, b_author) 
-VALUES ('$item1','$item2','$item3','$item4','$item5','$item6') ";
+$query = "INSERT INTO tbl_books (b_daterecieved, b_class, b_author, b_titleofbook, b_image, b_isbn, b_edition, b_volumes, b_page, b_sourceoffund, b_costprice, b_publisher, b_year, b_quantity, b_remark) 
+VALUES ('$item1','$item2','$item3','$item4','$item14','$item5','$item6','$item7','$item8','$item9','$item10','$item11','$item12','$item15','$item13') ";
 
 
       mysqli_query($connect, $query);

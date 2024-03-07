@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     date_default_timezone_set('Asia/Manila');
     $currentDateTime = date("Y-m-d H:i:s");
 
-    $select=$conn->prepare("SELECT * FROM tbl_books WHERE b_isbn = :b_id");
+    $select=$conn->prepare("SELECT * FROM tbl_books WHERE b_id = :b_id");
     $select->bindParam(':b_id', $bookID);
     $select->execute();
     $book = $select->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 
         $quantity = $book['b_quantity']-1;
 
-        $update=$conn->prepare("UPDATE tbl_books SET b_quantity = :quant WHERE b_isbn = :b_id");
+        $update=$conn->prepare("UPDATE tbl_books SET b_quantity = :quant WHERE b_id = :b_id");
         $update->bindValue(':quant',$quantity);
         $update->bindValue(':b_id',$bookID);
         $update->execute();

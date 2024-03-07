@@ -53,6 +53,15 @@ include "Header/Registerhead.php";
                     </div>';
                   
                           }
+
+                          if($_GET["error"]== "Createdsuccessfully"){
+                            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <i class="bi bi-exclamation-octagon me-1"></i>
+                           Acount Created Successfully
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>';
+                        
+                                }
                     
                           echo '<script>
                       

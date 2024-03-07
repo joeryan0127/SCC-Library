@@ -56,6 +56,13 @@ include "Header/Registerhead.php";
                       </div>';
 
                           }
+
+                          echo '<script>
+                      
+                          var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+                          history.replaceState({}, document.title, newUrl);
+                          
+                          </script>';
                               
                             }
                           ?>
@@ -65,6 +72,13 @@ include "Header/Registerhead.php";
                   <label for="inputName5" class="form-label">Your Name</label>
                   <input type="text" class="form-control" name="name" id="inputName5" required>
                 </div>
+
+                <div class="col-12">
+                  <label for="inputAddress5" class="form-label">Address</label>
+                  <input type="text" class="form-control" name="address" id="inputAddres5s" required>
+                </div>
+
+            
                 <div class="col-md-6">
                   <label for="inputEmail5" class="form-label">Email</label>
                   <input type="text" class="form-control" name="email" id="inputEmail5" required>
@@ -73,6 +87,9 @@ include "Header/Registerhead.php";
                   <label for="inputEmail5" class="form-label">User</label>
                   <input type="text" class="form-control" name="user" id="inputEmail5"  required>
                 </div>
+
+             
+
                 <div class="col-md-6">
                   <label for="inputPassword5" class="form-label">Password</label>
                   <input type="password" class="form-control" name="pass" id="inputPassword5" required>
@@ -81,10 +98,12 @@ include "Header/Registerhead.php";
                   <label for="inputPassword5" class="form-label">Retype Password</label>
                   <input type="password" class="form-control" name="rpass" id="inputPassword5" required>
                 </div>
+              
                 <div class="col-12">
-                  <label for="inputAddress5" class="form-label">Address</label>
-                  <input type="text" class="form-control" name="address" id="inputAddres5s" required>
+                  <label for="inputAddress5" class="form-label">Phone</label>
+                  <input type="text" class="form-control" name="phone" id="inputAddres5s" required>
                 </div>
+
             
             
                 <!-- <div class="col-12">

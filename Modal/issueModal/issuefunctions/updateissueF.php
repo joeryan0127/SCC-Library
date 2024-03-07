@@ -20,20 +20,20 @@ if($book_id == $b_id){
 
 }else{
 
-    $select=$conn->prepare("SELECT * FROM tbl_books WHERE b_isbn = :b_id");
+    $select=$conn->prepare("SELECT * FROM tbl_books WHERE b_id  = :b_id");
     $select->bindParam(':b_id', $b_id);
     $select->execute();
     $book = $select->fetch(PDO::FETCH_ASSOC);
    
     $quantity = $book['b_quantity']-1;
 
-    $update=$conn->prepare("UPDATE tbl_books SET b_quantity = :quant WHERE b_isbn = :b_id");
+    $update=$conn->prepare("UPDATE tbl_books SET b_quantity = :quant WHERE b_id  = :b_id");
     $update->bindValue(':quant',$quantity);
     $update->bindValue(':b_id',$b_id);
     $update->execute();
 
 
-    $statement=$conn->prepare("UPDATE tbl_issuebook SET s_id = :stud_id, book_id = :b_id Where i_id = :issue_id ");
+    $statement=$conn->prepare("UPDATE tbl_issuebook SET s_id = :stud_id, book_id = :b_id Where i_id = :issue_id");
     $statement->bindValue(':stud_id',$s_id);
     $statement->bindValue(':b_id',$b_id);
     $statement->bindValue(':issue_id',$id);

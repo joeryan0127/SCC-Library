@@ -11,6 +11,7 @@ if(isset($_POST['submit'])){
     $pass = $_POST['pass'];
     $rpass = $_POST['rpass'];
     $address = $_POST['address'];
+    $phone = $_POST['phone'];
 
     $select=$conn->prepare("SELECT a_user FROM tbl_account WHERE a_user = :user");
     $select->bindParam(':user', $user);
@@ -31,16 +32,17 @@ if(isset($_POST['submit'])){
 
         $hashedpwd = password_hash($pass, PASSWORD_DEFAULT);
 
-        $statement=$conn->prepare("INSERT INTO tbl_account (a_name, a_email, a_user, a_pass, a_address, a_status)VALUE(:name, :email, :user, :pass, :address, :status)");
+        $statement=$conn->prepare("INSERT INTO tbl_account (a_name, a_email, a_user, a_pass, a_address,a_phone, a_status)VALUE(:name, :email, :user, :pass, :address, :phone,:status)");
         $statement->bindValue(':name',$name);
         $statement->bindValue(':email',$email);
         $statement->bindValue(':user',$user);
         $statement->bindValue(':pass',$hashedpwd);
         $statement->bindValue(':address',$address);
+        $statement->bindValue(':phone',$phone);
         $statement->bindValue(':status','Active');
         $statement->execute();
 
-        header("location:../Register.php?error=Createdsuccessfully");
+        header("location:../login.php?error=Createdsuccessfully");
 
     }
 
