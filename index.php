@@ -15,7 +15,7 @@ include "headers.php";
   <main id="main">
 
     <!-- ======= What We Do Section ======= -->
-    <section id="what-we-do" class="what-we-do">
+    <!-- <section id="what-we-do" class="what-we-do">
       <div class="container">
 
         <div class="section-title">
@@ -51,10 +51,10 @@ include "headers.php";
         </div>
 
       </div>
-    </section><!-- End What We Do Section -->
+    </section> -->
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- <section id="about" class="about">
       <div class="container">
 
         <div class="row">
@@ -86,10 +86,9 @@ include "headers.php";
         </div>
 
       </div>
-    </section><!-- End About Section -->
-
+    </section> -->
     <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills">
+    <!-- <section id="skills" class="skills">
       <div class="container">
 
         <div class="row skills-content">
@@ -147,10 +146,10 @@ include "headers.php";
         </div>
 
       </div>
-    </section><!-- End Skills Section -->
+    </section> -->
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    <!-- <section id="counts" class="counts">
       <div class="container">
 
         <div class="row">
@@ -190,10 +189,10 @@ include "headers.php";
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section> -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <!-- <section id="services" class="services section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -247,7 +246,7 @@ include "headers.php";
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section> -->
 
     <!-- ======= Portfolio Section ======= -->
    
@@ -257,7 +256,7 @@ include "booksD.php";
 
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <!-- <section id="testimonials" class="testimonials section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -279,7 +278,7 @@ include "booksD.php";
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -292,7 +291,7 @@ include "booksD.php";
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -305,7 +304,7 @@ include "booksD.php";
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -318,8 +317,7 @@ include "booksD.php";
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <p>
@@ -331,17 +329,17 @@ include "booksD.php";
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section> -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <!-- <section id="team" class="team">
       <div class="container">
 
         <div class="section-title">
@@ -404,10 +402,10 @@ include "booksD.php";
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section> -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section-bg">
+    <!-- <section id="contact" class="contact section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -474,7 +472,7 @@ include "booksD.php";
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section> -->
 
   </main><!-- End #main -->
 

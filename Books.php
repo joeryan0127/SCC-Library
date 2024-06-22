@@ -102,7 +102,7 @@ include "Db/connection.php";
           <table class="table-borderless datatable">
             <thead>
               <tr>
-                <th scope="col">Book id</th>
+                <th scope="col">Id</th>
                 <th scope="col">Book Name</th>
 <!--                
                 <th scope="col">Edition</th> -->
@@ -133,12 +133,14 @@ include "Db/connection.php";
                 <td>
             
                 <div style="position:absolute">
-            
-        <a href="#edit_<?php echo $books["b_id"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
+
+          <a href="#view_<?php echo $books["b_id"]; ?>" class="btn btn-secondary btn-sm" data-bs-toggle="modal"><i class="bi bi-eye"></i></a>
+           <?php include("Modal/viewmodal.php"); ?> 
+
+         <a href="#edit_<?php echo $books["b_id"]; ?>" class="btn btn-success btn-sm" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
            <?php include("Modal/UpdateBookM.php"); ?> 
 
-          <a href="#del_<?php echo $books["b_id"]; ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal"><i class="bi bi-trash3"></i></a>
-          <?php include("Modal/DeleteBookM.php"); ?>
+      
          
               </div>
 
